@@ -44,6 +44,11 @@ app.get("/funkos/:universe", async (req, res) => {
     res.json(funkosList);
 })
 
+app.get("/favorite", async (req, res) => {
+    const funkoStar = await Funko.find();
+    res.json(funkoStar);
+})
+
 app.get("/universes", async (req, res) => {
     const universesList = await Universe.find();
     res.json(universesList);
